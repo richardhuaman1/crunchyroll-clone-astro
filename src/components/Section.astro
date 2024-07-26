@@ -3,13 +3,20 @@ import Container from './Container.astro';
 
 type Props = {
   id: string;
+  disableContainer?: boolean;
 };
 
-const { id, ...restProps } = Astro.props;
+const { id, disableContainer = false, ...restProps } = Astro.props;
 ---
 
 <section id={id} {...restProps} class='py-6'>
-  <Container>
-    <slot />
-  </Container>
+  {
+    disableContainer ? (
+      <slot />
+    ) : (
+      <Container>
+        <slot />
+      </Container>
+    )
+  }
 </section>

@@ -7,6 +7,7 @@ import TopPicks from '@/components/sections/TopPicks.astro';
 import SectionTitle from '@/components/SectionTitle.astro';
 import Banner from '@/components/Banner.astro';
 import Feeds from '@/components/Feeds.astro';
+import ShowCard from '@/components/ShowCard.astro';
 ---
 
 <Layout title={seo.title} description={seo.description} canonical={EnvService.getClient()}>
@@ -27,10 +28,29 @@ import Feeds from '@/components/Feeds.astro';
       srcLarge='/images/banners/banner-2-lg.webp'
     />
   </Section>
+  <Section id='showcard-2' disableContainer>
+    <ShowCard
+      title="The Ancient Magus' Bride"
+      description="Hatori Chise has lived a life full of neglect and abuse, devoid of anything resembling love. Far from the warmth of family, she has had her share of troubles and pitfalls. Just when all hope seems lost, a fateful encounter awaits her. When a man with the head of a beast, wielding strange powers, obtains her through a slave auction, Chise's life will never be the same again."
+      serieName='Sub | Dub'
+      srcSmall='/images/show-cards/show-card-1-small.webp'
+      srcLarge='/images/show-cards/show-card-1-large.webp'
+    />
+  </Section>
   <Section id='banner-3'>
     <Banner
       srcSmall='/images/banners/banner-3-sm.webp'
       srcLarge='/images/banners/banner-3-lg.webp'
+    />
+  </Section>
+  <Section id='showcard-3' disableContainer>
+    <ShowCard
+      color='green'
+      title='My Hero Academia'
+      description='Izuku has dreamt of being a hero all his life—a lofty goal for anyone, but especially challenging for a kid with no superpowers. That’s right, in a world where eighty percent of the population has some kind of super-powered “quirk. '
+      serieName='Sub | Dub'
+      srcSmall='/images/show-cards/show-card-2-large.webp'
+      srcLarge='/images/show-cards/show-card-2-large.webp'
     />
   </Section>
   <Section id='feeds'>

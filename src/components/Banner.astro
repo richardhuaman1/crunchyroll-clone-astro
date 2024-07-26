@@ -1,4 +1,6 @@
 ---
+import { BREAKPOINTS } from '@/utilities/constants';
+
 interface Props {
   href?: string;
   srcSmall: string;
@@ -10,7 +12,7 @@ const { href = '#', srcSmall, srcLarge } = Astro.props;
 
 <a href={href}>
   <picture>
-    <source media={`(max-width: 768px)`} srcset={srcSmall} />
+    <source media={`(max-width: ${BREAKPOINTS.md})`} srcset={srcSmall} />
     <img src={srcLarge} alt='middle-banner' class='w-full' />
   </picture>
 </a>
