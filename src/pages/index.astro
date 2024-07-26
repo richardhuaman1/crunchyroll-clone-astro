@@ -6,6 +6,7 @@ import Section from '@/components/Section.astro';
 import TopPicks from '@/components/sections/TopPicks.astro';
 import SectionTitle from '@/components/SectionTitle.astro';
 import Banner from '@/components/Banner.astro';
+import Feeds from '@/components/Feeds.astro';
 ---
 
 <Layout title={seo.title} description={seo.description} canonical={EnvService.getClient()}>
@@ -31,5 +32,8 @@ import Banner from '@/components/Banner.astro';
       srcSmall='/images/banners/banner-3-sm.webp'
       srcLarge='/images/banners/banner-3-lg.webp'
     />
+  </Section>
+  <Section id='feeds'>
+    <Feeds />
   </Section>
 </Layout>
