@@ -1,5 +1,5 @@
 export const LAYOUT_SIZES = {
-  navbar: 72,
+  navbar: 60,
   footer: 52,
 };
 

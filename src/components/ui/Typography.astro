@@ -1,0 +1,43 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types';
+
+type Props<Tag extends HTMLTag> = Polymorphic<{
+  as: Tag;
+  size: keyof typeof sizeClasses;
+  color?: keyof typeof colorClasses;
+}>;
+
+const { as: Tag = 'p', class: className, size, color = 'default', ...props } = Astro.props;
+
+const sizeClasses: { [key: string]: string } = {
+  xxs: 'text-xxs',
+  xs: 'text-xs',
+  sm: 'text-sm',
+  md: 'text-md',
+  lg: 'text-lg',
+  xl: 'text-xl',
+  '2xl': 'text-2xl',
+  '3xl': 'text-3xl',
+  'big-1': 'xl:text-4xl text-3xl',
+  'big-2': 'xl:text-5xl lg:text-4xl text-3xl',
+  'big-3': 'xl:text-6xl lg:text-5xl text-4xl',
+  'big-4': 'xl:text-7xl lg:text-6xl text-5xl',
+  'big-5': 'xl:text-8xl lg:text-7xl text-6xl',
+};
+
+const colorClasses = {
+  default: 'text-white',
+  light: 'text-light',
+  primary: 'text-primary',
+};
+
+const classes = [
+  sizeClasses[size as keyof typeof sizeClasses],
+  colorClasses[color as keyof typeof colorClasses],
+  className,
+];
+---
+
+<Tag class:list={classes} {...props} tabindex='0'>
+  <slot />
+</Tag>
