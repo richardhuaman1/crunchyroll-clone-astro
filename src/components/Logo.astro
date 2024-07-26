@@ -1,10 +1,9 @@
 ---
-import CodeIcon from './icons/CodeIcon.astro';
+import LogoIcon from './icons/LogoIcon.astro';
 ---
 
-<button
-  aria-label='Logo'
-  class='h-[50px] w-[50px] focus:ring-2 ring-gray-200 rounded-xl flex items-center justify-center bg-gray-700/50 border-gray-700/90'
->
-  <CodeIcon class='size-10 text-white' />
-</button>
+<div class='flex items-center justify-center cursor-pointer px-4'>
+  <LogoIcon
+    class='h-auto w-32 text-primary hover:text-white ease-in-out transition-colors delay-100 duration-300'
+  />
+</div>

@@ -1,6 +1,6 @@
 ---
 import BookmarkIcon from './icons/BookmarkIcon.astro';
-import LogoIcon from './icons/LogoIcon.astro';
+import Logo from './Logo.astro';
 import ChevronDownIcon from './icons/ChevronDownIcon.astro';
 import SearchIcon from './icons/SearchIcon.astro';
 import UserIcon from './icons/UserIcon.astro';
@@ -34,17 +34,13 @@ const navLinks = [
     class='mx-auto lg:max-w-screen-lg md:px-4 lg:px-8 flex items-center justify-center'
     style={`height: ${navbarHeight}px;`}
   >
-    <div class='flex items-center justify-center cursor-pointer px-4'>
-      <LogoIcon
-        class='h-auto w-32 text-primary hover:text-white ease-in-out transition-colors delay-100 duration-300'
-      />
-    </div>
+    <Logo />
     <nav class='flex h-full w-full items-center justify-end lg:justify-between'>
       <ul class='hidden h-full lg:flex'>
         {
           navLinks.map((item) => (
             <li class='flex cursor-pointer hover:bg-black'>
-              <div class='flex items-center justify-center px-4 text-typography-light'>
+              <div class='flex items-center justify-center px-4 text-light'>
                 <Typography size='md' color='light'>
                   {item.name}
                 </Typography>
