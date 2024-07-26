@@ -8,27 +8,72 @@ import SectionTitle from '@/components/SectionTitle.astro';
 import Banner from '@/components/Banner.astro';
 import Feeds from '@/components/Feeds.astro';
 import ShowCard from '@/components/ShowCard.astro';
+import KeepWatching from '@/components/sections/KeepWatching.astro';
+import Watchlist from '@/components/sections/Watchlist.astro';
+import SiblingSquad from '@/components/sections/SiblingSquad.astro';
+import NewEpisodes from '@/components/sections/NewEpisodes.astro';
+import MostPopular from '@/components/sections/MostPopular.astro';
+import Artists from '@/components/sections/Artists.astro';
+import BottomContent from '@/components/sections/BottomContent.astro';
 ---
 
 <Layout title={seo.title} description={seo.description} canonical={EnvService.getClient()}>
+  <!-- Title -->
   <h1 hidden aria-hidden='true'>Crunchyroll Clone</h1>
+  <!-- Top Picks -->
   <Section id='top-picks'>
     <SectionTitle title='Top Picks For You' color='green' />
     <TopPicks />
   </Section>
+
+  <!-- Keep Watching -->
+  <Section id='keep-watching'>
+    <SectionTitle title='Continue Watching' color='orange' />
+    <KeepWatching />
+  </Section>
+
+  <!-- Banner 1 -->
   <Section id='banner-1'>
     <Banner
       srcSmall='/images/banners/banner-1-sm.webp'
       srcLarge='/images/banners/banner-1-lg.webp'
     />
   </Section>
+
+  <!-- Your Watchlist -->
+  <Section id='your-watchlist'>
+    <SectionTitle title='Your Watchlist' color='orange' />
+    <Watchlist />
+  </Section>
+
+  <!-- Sibling Squad -->
+  <Section id='sibling-squad'>
+    <SectionTitle title='Sibling Squad' color='green' />
+    <SiblingSquad />
+  </Section>
+
+  <!-- New Episodes -->
+  <Section id='new-episodes'>
+    <SectionTitle title='New Episodes' color='orange' />
+    <NewEpisodes />
+  </Section>
+
+  <!-- Banner 2 -->
   <Section id='banner-2'>
     <Banner
       srcSmall='/images/banners/banner-2-sm.webp'
       srcLarge='/images/banners/banner-2-lg.webp'
     />
   </Section>
-  <Section id='showcard-2' disableContainer>
+
+  <!-- Most Popular -->
+  <Section id='most-popular'>
+    <SectionTitle title='Most Popular' color='orange' />
+    <MostPopular />
+  </Section>
+
+  <!-- Show Card 1 -->
+  <Section id='showcard-1' disableContainer>
     <ShowCard
       title="The Ancient Magus' Bride"
       description="Hatori Chise has lived a life full of neglect and abuse, devoid of anything resembling love. Far from the warmth of family, she has had her share of troubles and pitfalls. Just when all hope seems lost, a fateful encounter awaits her. When a man with the head of a beast, wielding strange powers, obtains her through a slave auction, Chise's life will never be the same again."
@@ -37,13 +82,15 @@ import ShowCard from '@/components/ShowCard.astro';
       srcLarge='/images/show-cards/show-card-1-large.webp'
     />
   </Section>
-  <Section id='banner-3'>
-    <Banner
-      srcSmall='/images/banners/banner-3-sm.webp'
-      srcLarge='/images/banners/banner-3-lg.webp'
-    />
+
+  <!-- Artists -->
+  <Section id='artists'>
+    <SectionTitle title='Artists We Love' color='orange' />
+    <Artists />
   </Section>
-  <Section id='showcard-3' disableContainer>
+
+  <!-- Show Card 2 -->
+  <Section id='showcard-2' disableContainer>
     <ShowCard
       color='green'
       title='My Hero Academia'
@@ -53,6 +100,14 @@ import ShowCard from '@/components/ShowCard.astro';
       srcLarge='/images/show-cards/show-card-2-large.webp'
     />
   </Section>
+
+  <!-- Bottom Content -->
+  <Section id='bottom-content'>
+    <SectionTitle title='Wow, You Scrolled to the bottom!' color='orange' />
+    <BottomContent />
+  </Section>
+
+  <!-- Feeds -->
   <Section id='feeds'>
     <Feeds />
   </Section>
