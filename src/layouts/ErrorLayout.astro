@@ -1,0 +1,40 @@
+---
+import TailwindIndicator from '@/components/TailwindIndicator.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+
+const determineCanonicalURL = () => {
+  const localhost = 'http://localhost:4321';
+
+  if (Astro.url.host.includes('localhost')) return localhost;
+  return canonical || Astro.url.pathname;
+};
+
+const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>{title} | {description}</title>
+    <meta name='description' content={description} />
+    <meta name='robots' content='noindex, follow' />
+    <link rel='canonical' href={canonicalURL} />
+  </head>
+  <body class='min-h-screen bg-dark w-full'>
+    <!--     <NavbarBasic /> -->
+    <main>
+      <slot />
+    </main>
+    <!--     <Footer /> -->
+    <TailwindIndicator />
+  </body>
+</html>

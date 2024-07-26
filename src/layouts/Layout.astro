@@ -1,0 +1,30 @@
+---
+import Seo from '@/components/Seo.astro';
+import { ViewTransitions } from 'astro:transitions';
+import TailwindIndicator from '@/components/TailwindIndicator.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+}
+
+const { title, description, canonical, image } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <Seo canonical={canonical} description={description} image={image} title={title} />
+    <ViewTransitions />
+  </head>
+  <body id='main-content' class='min-h-screen bg-dark text-white w-full'>
+    <!--     <Navbar /> -->
+    <main>
+      <slot />
+    </main>
+    <!--     <Footer /> -->
+    <TailwindIndicator />
+  </body>
+</html>

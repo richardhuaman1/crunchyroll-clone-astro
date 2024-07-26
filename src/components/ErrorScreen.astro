@@ -1,0 +1,39 @@
+---
+import Container from '@/components/Container.astro';
+import { seo } from '@/data/seo.data';
+import ErrorLayout from '@/layouts/ErrorLayout.astro';
+import { EnvService } from '@/services/env.service';
+import { LAYOUT_TOTAL_HEIGHT } from '@/utilities/constants';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<ErrorLayout title={seo.title} description={description} canonical={EnvService.getClient()}>
+  <h1 hidden aria-hidden='true'>{title}</h1>
+  <Container
+    style={`height: calc(100vh - ${LAYOUT_TOTAL_HEIGHT}px);`}
+    class='flex items-center justify-center'
+  >
+    <div class='flex items-center justify-center flex-col lg:flex-row w-full'>
+      <div class='w-full lg:w-[35%] flex items-center justify-center'>
+        <!--  <AliensIcon class:list='text-primary-600/70 size-[350px] w-full lg:w-auto' /> -->
+        Error title
+      </div>
+      <div class='w-full lg:w-[65%] flex items-center justify-center'>
+        <div class='pt-3 lg:pt-0 flex items-center justify-center flex-col'>
+          Error description
+          <!--   <div class='mt-6 font-medium'>
+            <ActionLinkButton href='/' radius='xl' color='primary' target='_self'>
+              Take me Home
+            </ActionLinkButton>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </Container>
+</ErrorLayout>

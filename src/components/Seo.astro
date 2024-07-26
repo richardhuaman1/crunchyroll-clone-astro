@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import '../styles/swiper.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+}
+
+const { title, description, canonical, image = '' } = Astro.props as Props;
+
+const determineCanonicalURL = () => {
+  const localhost = 'http://localhost:4321';
+
+  if (Astro.url.host.includes('localhost')) return localhost;
+  return canonical || Astro.url.pathname;
+};
+
+const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
+---
+
+<title>{title}</title>
+
+<meta charset='UTF-8' />
+<meta name='description' content={description} />
+
+<link rel='canonical' href={canonicalURL} />
+<meta name='viewport' content='width=device-width' />
+
+<link
+  rel='preload'
+  href='https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap'
+  as='font'
+  type='font/woff2'
+  crossorigin
+/>
+
+<meta property='og:image' content={new URL(image, Astro.url)} />
+<meta property='og:title' content={title} />
+<meta property='og:description' content={description} />
+<meta property='og:url' content={Astro.url} />
+<meta property='og:site_name' content={title} />
+<meta property='og:type' content='website' />
+<meta property='og:locale' content='en_EN' />
+
+<meta name='robots' content='index, follow' />
+<meta name='googlebot' content='index, follow' />
+
+<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+
+<link rel='icon' type='image/svg+xml' href='/favicon.svg' />

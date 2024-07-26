@@ -1,0 +1,22 @@
+---
+import { seo } from '@/data/seo.data';
+import Layout from '../layouts/Layout.astro';
+import { EnvService } from '@/services/env.service';
+---
+
+<Layout title={seo.title} description={seo.description} canonical={EnvService.getClient()}>
+  <h1 hidden aria-hidden='true'>Crunchyroll Clone</h1>
+  <div>Hello World!</div>
+  <!--   <SectionContainer id={SECTIONS.home} disablePadding>
+    <HeroSection />
+  </SectionContainer>
+  <SectionContainer id={SECTIONS.skills} title='Technical Skills' icon={SkillIcon}>
+    <SkillsSection />
+  </SectionContainer>
+  <SectionContainer id={SECTIONS.experience} title='Work Experience' icon={BriefcaseIcon}>
+    <WorkExperienceSection />
+  </SectionContainer>
+  <SectionContainer id={SECTIONS.projects} title='Projects' icon={LaptopIcon}>
+    <ProjectsSection />
+  </SectionContainer> -->
+</Layout>

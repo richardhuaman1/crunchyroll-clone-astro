@@ -1,0 +1,21 @@
+---
+import { isDev } from '@/utilities/functions';
+---
+
+{
+  isDev() && (
+    <div
+      id='tailwind-indicator'
+      class='fixed bottom-1 right-1 z-indicator flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 text-md font-medium text-white dark:bg-white dark:text-black'
+    >
+      <div class='block sm:hidden'>xs</div>
+      <div class='hidden sm:block md:hidden lg:hidden xl:hidden 2xl:hidden'>sm</div>
+      <div class='hidden md:block lg:hidden xl:hidden 2xl:hidden'>md</div>
+      <div class='hidden lg:block xl:hidden 2xl:hidden'>lg</div>
+      <div class='hidden xl:block 2xl:hidden'>xl</div>
+      <div class='hidden 2xl:block 3xl:hidden'>2xl</div>
+      <div class='hidden 3xl:block 4xl:hidden'>3xl</div>
+      <div class='hidden 4xl:block'>4xl</div>
+    </div>
+  )
+}

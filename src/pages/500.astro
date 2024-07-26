@@ -1,0 +1,14 @@
+---
+import ErrorScreen from '@/components/ErrorScreen.astro';
+
+interface Props {
+  error: unknown;
+}
+
+const { error } = Astro.props;
+---
+
+<ErrorScreen
+  title='500 - Oops! Something went wrong'
+  description={`Reason: ${error instanceof Error ? error.message : 'Unknown error'}`}
+/>
