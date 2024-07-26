@@ -1,0 +1,27 @@
+---
+import Container from './Container.astro';
+import type { Icon } from '../utilities/types';
+import SectionTitle from './SectionTitle.astro';
+import EndContent from './EndContent.astro';
+
+type Props = {
+  id: string;
+  title: string;
+  icon?: Icon;
+  endProps?: {
+    text: string;
+    url: string;
+  };
+};
+
+const { id, title, icon, endProps, ...restProps } = Astro.props;
+---
+
+<section id={id} {...restProps} class='py-12'>
+  <Container>
+    <SectionTitle title={title} icon={icon}>
+      {endProps?.url && endProps?.text && <EndContent href={endProps.url} text={endProps.text} />}
+    </SectionTitle>
+    <slot />
+  </Container>
+</section>

@@ -1,0 +1,19 @@
+---
+import ChevronRightIcon from '@/components/icons/ChevronRightIcon.astro';
+
+interface Props {
+  text: string;
+  href: string;
+}
+
+const { text, href } = Astro.props;
+---
+
+<a
+  {...Astro.props}
+  href={href}
+  class='hidden items-center justify-center px-2 md:flex text-dim hover:text-white font-semibold uppercase transition-colors delay-75 ease-in-out'
+>
+  <span class='text-sm'>{text}</span>
+  <i class='ml-1'><ChevronRightIcon /></i>
+</a>

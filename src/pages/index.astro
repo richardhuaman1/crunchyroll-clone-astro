@@ -2,11 +2,12 @@
 import { seo } from '@/data/seo.data';
 import Layout from '../layouts/Layout.astro';
 import { EnvService } from '@/services/env.service';
+import TopPicks from '@/components/sections/TopPicks.astro';
 ---
 
 <Layout title={seo.title} description={seo.description} canonical={EnvService.getClient()}>
   <h1 hidden aria-hidden='true'>Crunchyroll Clone</h1>
-  <div>Hello World!</div>
+  <TopPicks />
   <!--   <SectionContainer id={SECTIONS.home} disablePadding>
     <HeroSection />
   </SectionContainer>
