@@ -1,12 +1,11 @@
 ---
-import type { Icon } from '@/utilities/types';
+import type { Icon, SectionColor } from '@/utilities/types';
 import Typography from './ui/Typography.astro';
 
 interface Props {
   title: string;
   icon?: Icon;
-  url?: string;
-  color?: 'orange' | 'green';
+  color?: SectionColor;
 }
 
 const { title, color = 'orange', icon: IconComponent } = Astro.props;

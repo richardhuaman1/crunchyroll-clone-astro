@@ -1,0 +1,16 @@
+---
+interface Props {
+  href?: string;
+  srcSmall: string;
+  srcLarge: string;
+}
+
+const { href = '/', srcSmall, srcLarge } = Astro.props;
+---
+
+<a href={href}>
+  <picture>
+    <source media={`(max-width: 768px)`} srcset={srcSmall} />
+    <img src={srcLarge} alt='middle-banner' class='w-full' />
+  </picture>
+</a>

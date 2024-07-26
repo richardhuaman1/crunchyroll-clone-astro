@@ -2,22 +2,34 @@
 import { seo } from '@/data/seo.data';
 import Layout from '../layouts/Layout.astro';
 import { EnvService } from '@/services/env.service';
+import Section from '@/components/Section.astro';
 import TopPicks from '@/components/sections/TopPicks.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
+import Banner from '@/components/Banner.astro';
 ---
 
 <Layout title={seo.title} description={seo.description} canonical={EnvService.getClient()}>
   <h1 hidden aria-hidden='true'>Crunchyroll Clone</h1>
-  <TopPicks />
-  <!--   <SectionContainer id={SECTIONS.home} disablePadding>
-    <HeroSection />
-  </SectionContainer>
-  <SectionContainer id={SECTIONS.skills} title='Technical Skills' icon={SkillIcon}>
-    <SkillsSection />
-  </SectionContainer>
-  <SectionContainer id={SECTIONS.experience} title='Work Experience' icon={BriefcaseIcon}>
-    <WorkExperienceSection />
-  </SectionContainer>
-  <SectionContainer id={SECTIONS.projects} title='Projects' icon={LaptopIcon}>
-    <ProjectsSection />
-  </SectionContainer> -->
+  <Section id='top-picks'>
+    <SectionTitle title='Top Picks For You' color='green' />
+    <TopPicks />
+  </Section>
+  <Section id='banner-1'>
+    <Banner
+      srcSmall='/images/banners/banner-1-sm.webp'
+      srcLarge='/images/banners/banner-1-lg.webp'
+    />
+  </Section>
+  <Section id='banner-2'>
+    <Banner
+      srcSmall='/images/banners/banner-2-sm.webp'
+      srcLarge='/images/banners/banner-2-lg.webp'
+    />
+  </Section>
+  <Section id='banner-3'>
+    <Banner
+      srcSmall='/images/banners/banner-3-sm.webp'
+      srcLarge='/images/banners/banner-3-lg.webp'
+    />
+  </Section>
 </Layout>
