@@ -10,7 +10,7 @@ interface Props {
 const { href = '#', srcSmall, srcLarge } = Astro.props;
 ---
 
-<a href={href}>
+<a data-astro-reload href={href}>
   <picture>
     <source media={`(max-width: ${BREAKPOINTS.md}px)`} srcset={srcSmall} />
     <img src={srcLarge} alt='middle-banner' class='w-full' />

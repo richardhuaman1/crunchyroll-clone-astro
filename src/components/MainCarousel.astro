@@ -70,23 +70,29 @@ export const controls = [
       }
     </div>
     <div class='swiper-wrapper flex items-center justify-center gap-2 lg:!hidden'>
-      {controls.map((_) => <button class='swiper-slide !h-1 !w-11 bg-gray-200 hover:bg-white' />)}
+      {
+        controls.map((_, index) => (
+          <button
+            aria-label={`crontrol-button-${index + 1}`}
+            class='swiper-slide !h-1 !w-11 bg-gray-200 hover:bg-white'
+          />
+        ))
+      }
     </div>
   </div>
-
-  <style>
-    .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-size: cover;
-      background-position: center;
-    }
-    .thumbs .swiper-slide {
-      width: 25%;
-      height: 100%;
-    }
-  </style>
-
-  <script src='../libs/slider.js'></script>
 </Container>
+
+<style>
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
+  .thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+  }
+</style>
+<script src='../libs/main-slider.js'></script>

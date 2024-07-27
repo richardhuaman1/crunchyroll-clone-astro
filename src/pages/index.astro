@@ -16,6 +16,7 @@ import MostPopular from '@/components/sections/MostPopular.astro';
 import Artists from '@/components/sections/Artists.astro';
 import BottomContent from '@/components/sections/BottomContent.astro';
 import MainCarousel from '@/components/MainCarousel.astro';
+import Container from '@/components/Container.astro';
 ---
 
 <Layout title={seo.title} description={seo.description} canonical={EnvService.getClient()}>
@@ -25,8 +26,10 @@ import MainCarousel from '@/components/MainCarousel.astro';
     <MainCarousel />
   </Section>
   <!-- Top Picks -->
-  <Section id='top-picks'>
-    <SectionTitle title='Top Picks For You' color='green' />
+  <Section id='top-picks' disableContainer>
+    <Container>
+      <SectionTitle title='Top Picks For You' color='green' />
+    </Container>
     <TopPicks />
   </Section>
 
