@@ -74,8 +74,10 @@ import Container from '@/components/Container.astro';
   </Section>
 
   <!-- Most Popular -->
-  <Section id='most-popular'>
-    <SectionTitle title='Most Popular' color='orange' />
+  <Section id='most-popular' disableContainer disablePadding>
+    <Container>
+      <SectionTitle title='Most Popular' color='orange' />
+    </Container>
     <MostPopular />
   </Section>
 
