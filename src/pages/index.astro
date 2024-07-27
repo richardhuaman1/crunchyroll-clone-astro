@@ -54,8 +54,10 @@ import Container from '@/components/Container.astro';
   </Section>
 
   <!-- Sibling Squad -->
-  <Section id='sibling-squad'>
-    <SectionTitle title='Sibling Squad' color='green' />
+  <Section id='sibling-squad' disableContainer>
+    <Container>
+      <SectionTitle title='Sibling Squad' color='green' />
+    </Container>
     <SiblingSquad />
   </Section>
 
@@ -74,7 +76,7 @@ import Container from '@/components/Container.astro';
   </Section>
 
   <!-- Most Popular -->
-  <Section id='most-popular' disableContainer disablePadding>
+  <Section id='most-popular' disableContainer>
     <Container>
       <SectionTitle title='Most Popular' color='orange' />
     </Container>
