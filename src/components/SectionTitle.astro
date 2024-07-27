@@ -1,0 +1,29 @@
+---
+import type { Icon, SectionColor } from '@/utilities/types';
+import Typography from './ui/Typography.astro';
+
+interface Props {
+  title: string;
+  icon?: Icon;
+  color?: SectionColor;
+}
+
+const { title, color = 'orange', icon: IconComponent } = Astro.props;
+---
+
+<div class='mb-3'>
+  <div class='mb-2 flex items-center justify-between'>
+    <div class='flex items-center justify-center'>
+      {IconComponent && <IconComponent class:list='size-8 mr-2' />}
+      <Typography as='h2' size='2xl' class='tracking-wider'>{title}</Typography>
+    </div>
+    <slot />
+  </div>
+  {
+    color === 'orange' ? (
+      <div class='mt-2 h-1 w-full bg-gradient-to-r from-[#ef4323] to-[#fab818]' />
+    ) : (
+      <div class='mt-2 h-1 w-full bg-gradient-to-r from-[#2abdbb] to-[#213944]' />
+    )
+  }
+</div>

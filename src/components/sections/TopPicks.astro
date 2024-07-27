@@ -1,0 +1,75 @@
+---
+import MultiCarouselWrapper from '../MultiCarouselWrapper.astro';
+import MultiCarouselItem from '../MultiCarouselItem.astro';
+
+const data = [
+  {
+    image: 'images/multi-carousel/m-carousel-1.webp',
+    title: 'My Hero Academia (Dubs)',
+    series: 'Dubbed',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-2.webp',
+    title: 'Naruto Shippuden',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-3.webp',
+    title: 'Black Clover (Dubs)',
+    series: 'Dubbed',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-4.webp',
+    title: 'JUJUTSU KAISEN',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-5.webp',
+    title: 'Ange Vierge',
+    series: 'Dubbed',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-6.webp',
+    title: 'Mob Psycho 100',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-7.webp',
+    title: 'When Supernatural Battles Became Commonplace',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-8.webp',
+    title: 'Fate/Zero',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-9.webp',
+    title: 'Myriad Colors Phantom World',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-10.webp',
+    title: 'Attack on Titan',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-11.webp',
+    title: 'Shugo Chara',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/multi-carousel/m-carousel-12.webp',
+    title: 'Demon Slayer:Kimetsu No Yaiba',
+    series: 'Sub | Dub',
+  },
+];
+---
+
+<MultiCarouselWrapper>
+  {
+    data.map((item) => (
+      <MultiCarouselItem src={item.image} title={item.title} serie={item.series} />
+    ))
+  }
+</MultiCarouselWrapper>

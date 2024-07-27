@@ -1,0 +1,75 @@
+---
+import MultiCarouselWrapper from '../MultiCarouselWrapper.astro';
+import MultiCarouselItem from '../MultiCarouselItem.astro';
+
+const data = [
+  {
+    image: 'images/bottom-content/bc-1.webp',
+    title: 'Pop Team Epic',
+    series: 'Dubbed',
+  },
+  {
+    image: 'images/bottom-content/bc-2.webp',
+    title: 'Lucky Star',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/bottom-content/bc-3.webp',
+    title: 'Ace Attomey',
+    series: 'Dubbed',
+  },
+  {
+    image: 'images/bottom-content/bc-4.webp',
+    title: 'The Case Study of Vanitas',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/bottom-content/bc-5.webp',
+    title: 'Cowboy Beboop',
+    series: 'Dubbed',
+  },
+  {
+    image: 'images/bottom-content/bc-6.webp',
+    title: 'Danganronpa: The Animation',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/bottom-content/bc-7.webp',
+    title: 'She and Her Cat - Everything Flows-',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/bottom-content/bc-8.webp',
+    title: 'Life With an Ordinary Guy Who Reincarnated Into a Total Fantasy Knockout',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/bottom-content/bc-9.webp',
+    title: "Jojo's Bizarre Adventure",
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/bottom-content/bc-10.webp',
+    title: 'Laid-Back Camp',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/bottom-content/bc-11.webp',
+    title: 'Keep Your Hands Off Eizouken!',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/bottom-content/bc-12.webp',
+    title: 'Nichijou - My Ordinary Life',
+    series: 'Sub | Dub',
+  },
+];
+---
+
+<MultiCarouselWrapper>
+  {
+    data.map((item) => (
+      <MultiCarouselItem src={item.image} title={item.title} serie={item.series} />
+    ))
+  }
+</MultiCarouselWrapper>

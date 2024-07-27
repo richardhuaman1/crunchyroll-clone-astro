@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/shared.css';
 import '../styles/swiper.css';
 
 interface Props {
@@ -28,14 +29,6 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 
 <link rel='canonical' href={canonicalURL} />
 <meta name='viewport' content='width=device-width' />
-
-<link
-  rel='preload'
-  href='https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap'
-  as='font'
-  type='font/woff2'
-  crossorigin
-/>
 
 <meta property='og:image' content={new URL(image, Astro.url)} />
 <meta property='og:title' content={title} />

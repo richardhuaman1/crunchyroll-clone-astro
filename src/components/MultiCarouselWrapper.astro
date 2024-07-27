@@ -1,0 +1,21 @@
+<div class='select-none'>
+  <div class='mx-auto lg:max-w-[1150px] px-4 md:px-14 relative'>
+    <div class='swiper multi-main'>
+      <div class='swiper-wrapper'>
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+
+<script src='../libs/multi-slider.js'></script>

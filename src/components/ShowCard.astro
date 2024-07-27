@@ -1,0 +1,92 @@
+---
+import { BREAKPOINTS } from '@/utilities/constants';
+import type { SectionColor } from '@/utilities/types';
+import CarouselBg from './bg/CarouselBg.astro';
+import BookmarkIcon from './icons/BookmarkIcon.astro';
+import PlayIcon from '@/components/icons/PlayIcon.astro';
+import Container from './Container.astro';
+import Typography from './ui/Typography.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  serieName: string;
+  url?: string;
+  color?: SectionColor;
+  srcSmall: string;
+  srcLarge: string;
+}
+
+const { color, title, description, url = '#', serieName, srcLarge, srcSmall } = Astro.props;
+---
+
+<div
+  class={`min-h-[220px] relative ${color === 'orange' ? 'sm:bg-[#ef4323]' : color === 'green' ? 'sm:bg-[#2abdbb]' : ''}`}
+>
+  {color && <CarouselBg color='green' class:list='absolute -left-10 top-0 bottom-0 size-44' />}
+  <Container>
+    <div class={`${color ? 'py-6' : ''}`}>
+      <div class={`${color ? 'bg-transparent sm:bg-black py-4' : ''}`}>
+        <div class='flex flex-col sm:flex-row'>
+          <div class='flex w-[100%] sm:w-[30%] lg:w-[40%] items-center justify-center mb-2 sm:mb-0'>
+            <a
+              data-astro-reload
+              href={url}
+              class='group relative duration-300 ease-in-out hover:opacity-50 min-w-[300px] mx-auto'
+            >
+              <picture>
+                <source media={`(max-width: ${BREAKPOINTS.sm}px)`} srcset={srcLarge} />
+                <source media={`(max-width: ${BREAKPOINTS.md}px)`} srcset={srcSmall} />
+                <img
+                  src={srcLarge}
+                  alt={`show-card-${title}`}
+                  class='max-h-full max-w-full'
+                  title='To series'
+                />
+              </picture>
+            </a>
+          </div>
+          <div class='flex w-[100%] sm:w-[70%] lg:w-[60%] flex-col items-center justify-around'>
+            <div class='sm:px-3 md:px-6'>
+              <Typography as='h4' size='3xl' class='mb-2 line-clamp-1 hover:underline'>
+                <a data-astro-reload href={url}>{title}</a>
+              </Typography>
+              <div class='mb-3'>
+                <span class='text-[#2abdbb]'>Series:&nbsp;</span>
+                <span class='text-[10px] text-dim'>&#11201;</span>
+                <span class='text-xs text-dim'>&nbsp;{serieName}</span>
+              </div>
+              <p
+                class={`mb-4 text-md line-clamp-3 ${color ? 'sm:line-clamp-3' : 'sm:line-clamp-2'}`}
+              >
+                {description}
+              </p>
+              <div class='flex flex-col items-center justify-start gap-2 lg:flex-row'>
+                <a data-astro-reload href={url} class='w-full lg:w-auto'>
+                  <button
+                    class='transition-colors delay-75 ease-in-out flex w-full items-center justify-center border-2 border-primary bg-primary px-3 py-2.5 text-md font-semibold uppercase text-black hover:border-[#FF944D] hover:bg-[#FF944D]'
+                  >
+                    <span class='mr-2'>
+                      <PlayIcon />
+                    </span>
+                    Start Watching S1 E1
+                  </button>
+                </a>
+                <a data-astro-reload href={url} class='w-full lg:w-auto'>
+                  <button
+                    class='use-transition flex w-full items-center justify-center border-2 border-primary bg-transparent px-3 py-2.5 text-md font-semibold uppercase text-primary hover:border-[#FF944D] hover:text-[#FF944D]'
+                  >
+                    <span class='mr-2'>
+                      <BookmarkIcon />
+                    </span>
+                    Add to Watchlist
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</div>

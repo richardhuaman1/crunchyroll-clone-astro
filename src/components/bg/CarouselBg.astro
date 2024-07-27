@@ -1,0 +1,38 @@
+---
+import type { SectionColor } from '@/utilities/types';
+
+interface Props {
+  color: SectionColor;
+}
+
+const { color } = Astro.props;
+
+const colorClass = {
+  fillA: color === 'green' ? '#269495' : '#F47521',
+  fillB: color === 'green' ? '#213944' : '#fab818',
+};
+---
+
+<svg
+  xmlns='http://www.w3.org/2000/svg'
+  viewBox='0 0 2440 2102'
+  data-t='hero-carousel-blue-svg'
+  aria-labelledby='hero-carousel-blue-svg'
+  aria-hidden='true'
+  role='img'
+  preserveAspectRatio='xMidYMid slice'
+  {...Astro.props}
+>
+  <title id='hero-carousel-blue-svg'>Decoration</title>
+  <g fill='none' fill-rule='evenodd'>
+    <path
+      d='M1034.49 1C1558.882 1 2037.187-24.606 2102 482c-187.609-254.74-535.09-2.856-875.79-2.856-569.125 0-1030.49 461.216-1030.49 1030.154 0 44.719 2.85 88.772 8.378 131.988C78.322 1470.502 4 1259.505 4 1031.155 4 462.216 465.366 1 1034.49 1z'
+      fill={colorClass.fillA}
+      fill-opacity='.3'></path>
+    <g fill={colorClass.fillB} fill-opacity='.1'>
+      <path
+        d='M590 2255C198 2048-6 1328 480 799c-990 823-139.233 1640-139.233 1640S478 2268 590 2255zM1700 1445c-266-174-378-430-378-1163-74.406-107.16-193.739-72.827-358 103 12 514.667 257.333 868 736 1060z'
+      ></path>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,102 @@
+---
+import CrownIcon from '../icons/CrownIcon.astro';
+
+export const newEpisodesData = [
+  {
+    image: '/images/new-episodes/ne-1.webp',
+    animeName: 'X&Y',
+    episode: '5',
+    serie: 'Subtitled',
+    time: '11:00pm',
+    url: '#',
+    isPremium: true,
+  },
+  {
+    image: '/images/new-episodes/ne-2.webp',
+    animeName: '(Dubs) To Your Eternity',
+    episode: '3',
+    serie: 'Sub | Dub',
+    time: '2:15pm',
+    url: '#',
+    isPremium: false,
+  },
+  {
+    image: '/images/new-episodes/ne-3.webp',
+    animeName: 'Skip and Loafer',
+    episode: '5',
+    serie: 'Subtitled',
+    time: '10:30am',
+    url: '#',
+    isPremium: false,
+  },
+  {
+    image: '/images/new-episodes/ne-4.webp',
+    animeName: 'Chainsaw Man',
+    episode: '2',
+    serie: 'Sub | Dub',
+    time: '1:45pm',
+    url: '#',
+    isPremium: false,
+  },
+  {
+    image: '/images/new-episodes/ne-5.webp',
+    animeName: "(Dubs) Masamune-kun's Revenge",
+    episode: '12',
+    serie: 'Sub | Dub',
+    time: '1:30pm',
+    url: '#',
+    isPremium: true,
+  },
+  {
+    image: '/images/new-episodes/ne-6.webp',
+    animeName: 'THE MARGINAL SERVICE',
+    episode: '4',
+    serie: 'Subtitled',
+    time: '1:30pm',
+    url: '#',
+    isPremium: true,
+  },
+];
+---
+
+<div class='mt-2.5'>
+  <h3 class='text-xl font-medium md:text-2xl'>Today</h3>
+  <div class='mt-2 h-0.5 w-full bg-[#4A4E58]'></div>
+</div>
+<div class='mt-4'>
+  <div class='grid grid-cols-12 gap-3'>
+    {
+      newEpisodesData.map((item) => (
+        <a data-astro-reload href={item.url} class='col-span-12 md:col-span-6 lg:col-span-4'>
+          <div class='flex'>
+            <div class='w-[40%]  md:w-1/2'>
+              <img src={item.image} />
+            </div>
+            <div class='w-[60%] space-y-1 pl-3 pt-1 md:w-1/2'>
+              <h4 class='text-14 leading-5'>{item.animeName}</h4>
+              <div class='flex'>
+                {item.isPremium && (
+                  <span class='mr-1'>
+                    <CrownIcon class:list='size-4 text-[#FAB818]' />
+                  </span>
+                )}
+                <span class='text-xs font-semibold text-dim'>Episode {item.episode}</span>
+              </div>
+              <div class='flex items-center justify-between'>
+                <span class='text-xs font-semibold text-dim'>{item.serie}</span>
+                <span class='text-xxs font-semibold text-[#2abdbb]'>{item.time}</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</div>
+<a
+  data-astro-reload
+  href='#'
+  class='transition-colors delay-75 ease-in-out mt-4 flex cursor-pointer items-center justify-center bg-[#213944] py-2.5 hover:bg-[#2F5161]'
+>
+  <span class='text-14 font-bold uppercase'>Show more</span>
+</a>

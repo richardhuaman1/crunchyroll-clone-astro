@@ -23,8 +23,8 @@ export default {
       '2xl': '1536px',
     },
     fontSize: {
-      xxs: '10px',
-      xs: '12px',
+      xxs: '12px',
+      xs: '13px',
       sm: '14px',
       md: '16px',
       lg: '18px',
@@ -49,6 +49,7 @@ export default {
         navbar: '#23252B',
         primary: '#f47521',
         light: '#DADADA',
+        dim: '#A0A0A0',
         'carousel-green': '#2abdbb',
         'carousel-orange': '#fab818',
       },

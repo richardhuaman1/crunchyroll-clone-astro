@@ -9,7 +9,7 @@ const { class: className, style, ...restProps } = Astro.props;
 
 <div
   {...restProps}
-  class:list={`mx-auto md:max-w-3xl lg:max-w-screen-lg px-4 md:px-8 ${className}`}
+  class:list={`mx-auto lg:max-w-[1100px] px-4 md:px-8 ${className || ''}`}
   style={style}
 >
   <slot />

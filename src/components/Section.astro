@@ -1,0 +1,23 @@
+---
+import Container from './Container.astro';
+
+type Props = {
+  id: string;
+  disableContainer?: boolean;
+  disablePadding?: boolean;
+};
+
+const { id, disableContainer = false, disablePadding = false, ...restProps } = Astro.props;
+---
+
+<section id={id} {...restProps} class={disablePadding ? '' : 'py-6'}>
+  {
+    disableContainer ? (
+      <slot />
+    ) : (
+      <Container>
+        <slot />
+      </Container>
+    )
+  }
+</section>

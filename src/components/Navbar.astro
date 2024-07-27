@@ -1,0 +1,76 @@
+---
+import BookmarkIcon from './icons/BookmarkIcon.astro';
+import Logo from './Logo.astro';
+import ChevronDownIcon from './icons/ChevronDownIcon.astro';
+import SearchIcon from './icons/SearchIcon.astro';
+import UserIcon from './icons/UserIcon.astro';
+import { LAYOUT_SIZES } from '@/utilities/constants';
+import Typography from '@/components/ui/Typography.astro';
+
+const navbarHeight = LAYOUT_SIZES.navbar;
+
+const navLinks = [
+  {
+    name: 'Browse',
+    subMenu: true,
+  },
+  {
+    name: 'Manga',
+    subMenu: false,
+  },
+  {
+    name: 'Games',
+    subMenu: false,
+  },
+  {
+    name: 'News',
+    subMenu: true,
+  },
+];
+---
+
+<header class='sticky top-0 z-navbar bg-navbar'>
+  <div
+    class='mx-auto lg:max-w-[1100px] md:px-4 lg:px-8 flex items-center justify-center'
+    style={`height: ${navbarHeight}px;`}
+  >
+    <Logo />
+    <nav class='flex h-full w-full items-center justify-end lg:justify-between'>
+      <ul class='hidden h-full lg:flex'>
+        {
+          navLinks.map((item) => (
+            <li class='flex cursor-pointer hover:bg-black'>
+              <div class='flex items-center justify-center px-4 text-light'>
+                <Typography size='md' color='light'>
+                  {item.name}
+                </Typography>
+                {item.subMenu && (
+                  <i class='ml-1'>
+                    <ChevronDownIcon class='size-3 pl-2' />
+                  </i>
+                )}
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+      <ul class='flex h-full text-light'>
+        <li class='flex h-full cursor-pointer items-center justify-center px-3 hover:bg-black'>
+          <a data-astro-reload href='#' aria-label='Search'>
+            <SearchIcon class='size-10' />
+          </a>
+        </li>
+        <li class='flex h-full cursor-pointer items-center justify-center px-3 hover:bg-black'>
+          <a data-astro-reload href='#' aria-label='Bookmark'>
+            <BookmarkIcon class='size-10' />
+          </a>
+        </li>
+        <li class='flex h-full cursor-pointer items-center justify-center px-3 hover:bg-black'>
+          <a data-astro-reload href='#' aria-label='User'>
+            <UserIcon class='size-10' />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
