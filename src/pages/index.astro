@@ -113,8 +113,10 @@ import Container from '@/components/Container.astro';
   </Section>
 
   <!-- Bottom Content -->
-  <Section id='bottom-content'>
-    <SectionTitle title='Wow, You Scrolled to the bottom!' color='orange' />
+  <Section id='bottom-content' disableContainer>
+    <Container>
+      <SectionTitle title='Wow, You Scrolled to the bottom!' color='orange' />
+    </Container>
     <BottomContent />
   </Section>
 
