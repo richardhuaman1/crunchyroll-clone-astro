@@ -15,11 +15,15 @@ import NewEpisodes from '@/components/sections/NewEpisodes.astro';
 import MostPopular from '@/components/sections/MostPopular.astro';
 import Artists from '@/components/sections/Artists.astro';
 import BottomContent from '@/components/sections/BottomContent.astro';
+import MainCarousel from '@/components/MainCarousel.astro';
 ---
 
 <Layout title={seo.title} description={seo.description} canonical={EnvService.getClient()}>
   <!-- Title -->
   <h1 hidden aria-hidden='true'>Crunchyroll Clone</h1>
+  <Section id='main-carousel' disableContainer disablePadding>
+    <MainCarousel />
+  </Section>
   <!-- Top Picks -->
   <Section id='top-picks'>
     <SectionTitle title='Top Picks For You' color='green' />
