@@ -1,1 +1,59 @@
-<div>Artists</div>
+---
+import MultiCarouselWrapper from '../MultiCarouselWrapper.astro';
+import MultiCarouselItem from '../MultiCarouselItem.astro';
+
+const data = [
+  {
+    image: '/images/artists/ar-1.webp',
+    title: 'ASIAN KUNG-FU GENERATION',
+  },
+  {
+    image: '/images/artists/ar-2.webp',
+    title: 'Ikimonogakari',
+  },
+  {
+    image: '/images/artists/ar-3.webp',
+    title: 'UVERworld',
+  },
+  {
+    image: '/images/artists/ar-4.webp',
+    title: 'BURNOUT SYNDROMES',
+  },
+  {
+    image: '/images/artists/ar-5.webp',
+    title: 'SAYURI',
+  },
+  {
+    image: '/images/artists/ar-6.webp',
+    title: 'Queen Bee',
+  },
+  {
+    image: '/images/artists/ar-7.webp',
+    title: 'Porno Graffitti',
+  },
+  {
+    image: '/images/artists/ar-8.webp',
+    title: 'milet',
+  },
+  {
+    image: '/images/artists/ar-9.webp',
+    title: 'DISH//',
+  },
+  {
+    image: '/images/artists/ar-10.webp',
+    title: 'hitorie',
+  },
+  {
+    image: '/images/artists/ar-11.webp',
+    title: 'Ryokuoshoku',
+  },
+  {
+    image: '/images/artists/ar-12.webp',
+    title: 'Hitsujibungaku',
+  },
+];
+---
+
+<MultiCarouselWrapper>
+  {data.map((item) => <MultiCarouselItem src={item.image} title={item.title} />)}
+</MultiCarouselWrapper>
