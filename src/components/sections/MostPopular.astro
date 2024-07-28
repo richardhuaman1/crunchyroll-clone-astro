@@ -1,1 +1,75 @@
-<div>Most Popular</div>
+---
+import MultiCarouselWrapper from '../MultiCarouselWrapper.astro';
+import MultiCarouselItem from '../MultiCarouselItem.astro';
+
+const data = [
+  {
+    image: 'images/most-popular/mp-1.webp',
+    title: 'The Millionaire Detective - Balance : UNLIMITED',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/most-popular/mp-2.webp',
+    title: 'Link Click',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/most-popular/mp-3.webp',
+    title: 'FUUTO PI',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/most-popular/mp-4.webp',
+    title: ' Ace Attorney',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/most-popular/mp-5.webp',
+    title: 'The aquatope on white sand',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/most-popular/mp-6.webp',
+    title: 'Love After World Domination',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/most-popular/mp-7.webp',
+    title: 'Bungo Stray Dogs',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/most-popular/mp-8.webp',
+    title: 'My Roonmate is a Cat',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/most-popular/mp-9.webp',
+    title: 'The Night Beyond the tricornered Window',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/most-popular/mp-10.webp',
+    title: 'My Dress-Up Darling',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/most-popular/mp-11.webp',
+    title: 'Fullmetal Alchemist',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/most-popular/mp-12.webp',
+    title: 'Lycoris Recoil',
+    series: 'Sub | Dub',
+  },
+];
+---
+
+<MultiCarouselWrapper>
+  {
+    data.map((item) => (
+      <MultiCarouselItem src={item.image} title={item.title} serie={item.series} />
+    ))
+  }
+</MultiCarouselWrapper>

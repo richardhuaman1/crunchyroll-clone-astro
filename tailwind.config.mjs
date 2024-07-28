@@ -23,6 +23,7 @@ export default {
       '2xl': '1536px',
     },
     fontSize: {
+      xxs: '12px',
       xs: '13px',
       sm: '14px',
       md: '16px',

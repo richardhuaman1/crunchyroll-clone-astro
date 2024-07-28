@@ -1,1 +1,90 @@
-<div>Keep Watching</div>
+---
+import PlayIcon from '../icons/PlayIcon.astro';
+import MessageIcon from '../icons/MessageIcon.astro';
+
+export const data = [
+  {
+    image: '/images/keep-watching/kw-1.webp',
+    animeName: "BOFURI: I Don't Want to Get Hurt, so I'll Max Out My Defense.",
+    episodeName: 'S2 E9 - Maxing Defense and Setting Up a Base.',
+    serie: 'Sub | Dub',
+    duration: '20m left',
+    commentsCount: '467',
+  },
+  {
+    image: '/images/keep-watching/kw-2.webp',
+    animeName: 'One Peace',
+    episodeName: "S4 E248 - Franky's Past! the Day the Sea Train First Ran!",
+    serie: 'Subtitled',
+    duration: '24m',
+    commentsCount: '525',
+  },
+  {
+    image: '/images/keep-watching/kw-3.webp',
+    animeName: 'Campfire Cooking in Another World with My Absurd Skill',
+    episodeName: 'S1 E9 - Hunting Quests Are All About Meat and Money',
+    serie: 'Subtitled',
+    duration: '23m',
+    commentsCount: '1.1k',
+  },
+  {
+    image: '/images/keep-watching/kw-4.webp',
+    animeName: 'By the Grace of the Gods',
+    episodeName: 'S2 E12 - Ryoma and the Town of Gimul',
+    serie: 'Sub | Dub',
+    duration: '21m left',
+    commentsCount: '556',
+  },
+];
+---
+
+<div class='grid grid-cols-12 gap-5'>
+  {
+    data.map((item) => (
+      <div class='col-span-6 cursor-pointer md:col-span-4 lg:col-span-3'>
+        <a
+          aria-label={`continue-watching ${item.animeName}`}
+          data-astro-reload
+          href='#'
+          class='hover:opacity-90'
+        >
+          <div class='relative flex items-center justify-center'>
+            <img src={item.image} alt='Anime thumbnail' />
+            <div class='absolute'>
+              <div class='flex h-16 w-16 items-center justify-center rounded-full bg-[#0006]'>
+                <span class='text-[40px] text-white'>
+                  <PlayIcon />
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a
+          aria-label={`Go to ${item.animeName}`}
+          data-astro-reload
+          href='#'
+          class='transition-colors delay-75 ease-in-out mt-2 text-xs font-bold uppercase text-dim line-clamp-1 hover:text-white'
+        >
+          {item.animeName}
+        </a>
+        <a
+          aria-label='Continue watching from last episode'
+          data-astro-reload
+          href='#'
+          class='mt-0.5 font-semibold line-clamp-2'
+        >
+          {item.episodeName}
+        </a>
+        <div class='mt-2.5 flex items-center justify-between'>
+          <span class='text-xs text-dim'>{item.serie}</span>
+          <div class='flex items-center justify-center'>
+            <span class='pr-1.5 text-xs text-dim'>{item.commentsCount}</span>
+            <span class='text-dim'>
+              <MessageIcon />
+            </span>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>

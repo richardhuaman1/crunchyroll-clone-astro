@@ -10,6 +10,7 @@ type Props<Tag extends HTMLTag> = Polymorphic<{
 const { as: Tag = 'p', class: className, size, color = 'default', ...props } = Astro.props;
 
 const sizeClasses: { [key: string]: string } = {
+  xxs: 'text-xxs',
   xs: 'text-xs',
   sm: 'text-sm',
   md: 'text-md',

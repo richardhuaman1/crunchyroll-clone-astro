@@ -1,1 +1,75 @@
-<div>Sibling Squad</div>
+---
+import MultiCarouselWrapper from '../MultiCarouselWrapper.astro';
+import MultiCarouselItem from '../MultiCarouselItem.astro';
+
+const data = [
+  {
+    image: 'images/sibling-squad/sb-1.webp',
+    title: 'The Ice Guy and His Cool Female Colleague',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/sibling-squad/sb-2.webp',
+    title: 'Noragami',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/sibling-squad/sb-3.webp',
+    title: 'ERASED',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/sibling-squad/sb-4.webp',
+    title: 'JORAN THE PRINCESS OF SNOW AND BLOOD',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/sibling-squad/sb-5.webp',
+    title: 'Kaina of the Great Snow Sea',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/sibling-squad/sb-6.webp',
+    title: 'Those Snow White Notes',
+    series: 'Subtitled',
+  },
+  {
+    image: 'images/sibling-squad/sb-7.webp',
+    title: 'BLUELOCK',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/sibling-squad/sb-8.webp',
+    title: 'Kanon',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/sibling-squad/sb-9.webp',
+    title: 'To Your Eternity',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/sibling-squad/sb-10.webp',
+    title: "Wolf's Rain",
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/sibling-squad/sb-11.webp',
+    title: 'The Case Study of Vanitas',
+    series: 'Sub | Dub',
+  },
+  {
+    image: 'images/sibling-squad/sb-12.webp',
+    title: 'Golden Kamuy',
+    series: 'Sub | Dub',
+  },
+];
+---
+
+<MultiCarouselWrapper>
+  {
+    data.map((item) => (
+      <MultiCarouselItem src={item.image} title={item.title} serie={item.series} />
+    ))
+  }
+</MultiCarouselWrapper>

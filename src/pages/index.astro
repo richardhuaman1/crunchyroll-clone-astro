@@ -15,14 +15,21 @@ import NewEpisodes from '@/components/sections/NewEpisodes.astro';
 import MostPopular from '@/components/sections/MostPopular.astro';
 import Artists from '@/components/sections/Artists.astro';
 import BottomContent from '@/components/sections/BottomContent.astro';
+import MainCarousel from '@/components/MainCarousel.astro';
+import Container from '@/components/Container.astro';
 ---
 
 <Layout title={seo.title} description={seo.description} canonical={EnvService.getClient()}>
   <!-- Title -->
   <h1 hidden aria-hidden='true'>Crunchyroll Clone</h1>
+  <Section id='main-carousel' disableContainer disablePadding>
+    <MainCarousel />
+  </Section>
   <!-- Top Picks -->
-  <Section id='top-picks'>
-    <SectionTitle title='Top Picks For You' color='green' />
+  <Section id='top-picks' disableContainer>
+    <Container>
+      <SectionTitle title='Top Picks For You' color='green' />
+    </Container>
     <TopPicks />
   </Section>
 
@@ -47,8 +54,10 @@ import BottomContent from '@/components/sections/BottomContent.astro';
   </Section>
 
   <!-- Sibling Squad -->
-  <Section id='sibling-squad'>
-    <SectionTitle title='Sibling Squad' color='green' />
+  <Section id='sibling-squad' disableContainer>
+    <Container>
+      <SectionTitle title='Sibling Squad' color='green' />
+    </Container>
     <SiblingSquad />
   </Section>
 
@@ -67,8 +76,10 @@ import BottomContent from '@/components/sections/BottomContent.astro';
   </Section>
 
   <!-- Most Popular -->
-  <Section id='most-popular'>
-    <SectionTitle title='Most Popular' color='orange' />
+  <Section id='most-popular' disableContainer>
+    <Container>
+      <SectionTitle title='Most Popular' color='orange' />
+    </Container>
     <MostPopular />
   </Section>
 
@@ -84,8 +95,10 @@ import BottomContent from '@/components/sections/BottomContent.astro';
   </Section>
 
   <!-- Artists -->
-  <Section id='artists'>
-    <SectionTitle title='Artists We Love' color='orange' />
+  <Section id='artists' disableContainer>
+    <Container>
+      <SectionTitle title='Artists We Love' color='orange' />
+    </Container>
     <Artists />
   </Section>
 
@@ -102,8 +115,10 @@ import BottomContent from '@/components/sections/BottomContent.astro';
   </Section>
 
   <!-- Bottom Content -->
-  <Section id='bottom-content'>
-    <SectionTitle title='Wow, You Scrolled to the bottom!' color='orange' />
+  <Section id='bottom-content' disableContainer>
+    <Container>
+      <SectionTitle title='Wow, You Scrolled to the bottom!' color='orange' />
+    </Container>
     <BottomContent />
   </Section>
 

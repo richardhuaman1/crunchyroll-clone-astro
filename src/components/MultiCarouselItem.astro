@@ -1,0 +1,39 @@
+---
+interface Props {
+  src: string;
+  title: string;
+  serie?: string;
+}
+
+const { src, title, serie } = Astro.props;
+---
+
+<a data-astro-reload href='#' class='swiper-slide'>
+  <div class='flex items-center justify-center flex-col'>
+    <div class='select-none'>
+      <img src={src} alt='slider-image' />
+    </div>
+    <div class='mt-2.5 w-full'>
+      <h4 class='text-sm leading-[1.1rem] line-clamp-4'>{title}</h4>
+    </div>
+    {
+      serie && (
+        <div class='mt-2.5 w-full'>
+          <span class='text-[#2abdbb]'>Series:&nbsp;</span>
+          <span class='text-xs text-dim'>&#11201;</span>
+          <span class='text-sm text-dim'>&nbsp;{serie}</span>
+        </div>
+      )
+    }
+  </div>
+</a>
+
+<style>
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
+</style>
