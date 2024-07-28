@@ -30,12 +30,12 @@ const navLinks = [
 ---
 
 <header class='sticky top-0 z-navbar bg-navbar'>
-  <div
+  <nav
     class='mx-auto lg:max-w-[1100px] md:px-4 lg:px-8 flex items-center justify-center'
     style={`height: ${navbarHeight}px;`}
   >
     <Logo />
-    <nav class='flex h-full w-full items-center justify-end lg:justify-between'>
+    <div class='flex h-full w-full items-center justify-end lg:justify-between'>
       <ul class='hidden h-full lg:flex'>
         {
           navLinks.map((item) => (
@@ -71,6 +71,6 @@ const navLinks = [
           </a>
         </li>
       </ul>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>
