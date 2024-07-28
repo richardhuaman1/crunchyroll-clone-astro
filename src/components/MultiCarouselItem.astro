@@ -11,7 +11,7 @@ const { src, title, serie } = Astro.props;
 <a data-astro-reload href='#' class='swiper-slide'>
   <div class='flex items-center justify-center flex-col'>
     <div class='select-none'>
-      <img src={src} alt='slider-image' />
+      <img src={src} alt='slider-image' loading='lazy' height='234' width='158' />
     </div>
     <div class='mt-2.5 w-full'>
       <h4 class='text-sm leading-[1.1rem] line-clamp-4'>{title}</h4>
@@ -26,6 +26,7 @@ const { src, title, serie } = Astro.props;
       )
     }
   </div>
+  <div class='swiper-lazy-preloader swiper-lazy-preloader-white'></div>
 </a>
 
 <style>
