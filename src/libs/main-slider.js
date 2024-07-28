@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
       swiper: thumbs_swiper,
     },
     loop: true,
+    autoHeight: false,
+    loadPrevNext: false,
+    // amount of images to load
+    loadPrevNextAmount: 1,
     autoplay: { delay: 8000, disableOnInteraction: false, pauseOnMouseEnter: false },
   });
 });

@@ -11,7 +11,8 @@ const { src, srcset } = Astro.props;
 <div class='swiper-slide'>
   <picture>
     <source media={`(min-width: ${BREAKPOINTS.lg}px)`} srcset={srcset} />
-    <img src={src} alt='banner-img' />
+    <img src={src} alt='banner-img' loading='lazy' />
+    <div class='swiper-lazy-preloader swiper-lazy-preloader-white'></div>
   </picture>
 </div>
 

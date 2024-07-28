@@ -3,7 +3,7 @@ import Container from './Container.astro';
 import MainCarouselItem from './MainCarouselItem.astro';
 import Typography from './ui/Typography.astro';
 
-export const controls = [
+const controls = [
   {
     index: 0,
     title: 'MASHLE: MAGIC AND MUSCLES New Episode',
@@ -30,27 +30,17 @@ export const controls = [
 <div class='select-none bg-carousel-green py-4 sm:py-6'>
   <Container>
     <div class='swiper main'>
-      <div class='swiper-wrapper'>
-        <MainCarouselItem
-          src='/images/carousel/carousel-1-small.webp'
-          srcset='/images/carousel/carousel-1-large.webp'
-        />
-        <MainCarouselItem
-          src='/images/carousel/carousel-2-small.webp'
-          srcset='/images/carousel/carousel-2-large.webp'
-        />
-        <MainCarouselItem
-          src='/images/carousel/carousel-3-small.webp'
-          srcset='/images/carousel/carousel-3-large.webp'
-        />
-        <MainCarouselItem
-          src='/images/carousel/carousel-4-small.webp'
-          srcset='/images/carousel/carousel-4-large.webp'
-        />
-        <MainCarouselItem
-          src='/images/carousel/carousel-5-small.webp'
-          srcset='/images/carousel/carousel-5-large.webp'
-        />
+      <div class='swiper-wrapper !h-[400px] xs:!h-[550px] md:!h-[620px] lg:!h-[540px] !w-full'>
+        {
+          new Array(5)
+            .fill(null)
+            .map((_, index) => (
+              <MainCarouselItem
+                src={`/images/carousel/carousel-${index + 1}-small.webp`}
+                srcset={`/images/carousel/carousel-${index + 1}-large.webp`}
+              />
+            ))
+        }
       </div>
     </div>
   </Container>
