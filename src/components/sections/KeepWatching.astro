@@ -42,9 +42,14 @@ export const data = [
   {
     data.map((item) => (
       <div class='col-span-6 cursor-pointer md:col-span-4 lg:col-span-3'>
-        <a data-astro-reload href='#' class='hover:opacity-90'>
+        <a
+          aria-label={`continue-watching ${item.animeName}`}
+          data-astro-reload
+          href='#'
+          class='hover:opacity-90'
+        >
           <div class='relative flex items-center justify-center'>
-            <img src={item.image} class='' />
+            <img src={item.image} alt='Anime thumbnail' />
             <div class='absolute'>
               <div class='flex h-16 w-16 items-center justify-center rounded-full bg-[#0006]'>
                 <span class='text-[40px] text-white'>
@@ -55,13 +60,19 @@ export const data = [
           </div>
         </a>
         <a
+          aria-label={`Go to ${item.animeName}`}
           data-astro-reload
           href='#'
           class='transition-colors delay-75 ease-in-out mt-2 text-xs font-bold uppercase text-dim line-clamp-1 hover:text-white'
         >
           {item.animeName}
         </a>
-        <a data-astro-reload href='#' class='mt-0.5 font-semibold line-clamp-2'>
+        <a
+          aria-label='Continue watching from last episode'
+          data-astro-reload
+          href='#'
+          class='mt-0.5 font-semibold line-clamp-2'
+        >
           {item.episodeName}
         </a>
         <div class='mt-2.5 flex items-center justify-between'>
